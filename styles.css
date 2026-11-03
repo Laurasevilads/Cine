@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: #15161c;
+    color: #eee;
+}
+
+header {
+    background: #b0182a;
+    padding: 1rem 2rem;
+}
+header h1 { margin: 0; }
+header p { margin: .2rem 0 0; opacity: .85; }
+
+main { max-width: 1000px; margin: 1.5rem auto; padding: 0 1rem; }
+
+.filtros { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: .5rem; }
+input, select, button { font: inherit; padding: .45rem .7rem; border-radius: 4px; border: 1px solid #555; }
+input, select { background: #23242c; color: #eee; }
+
+button {
+    background: #b0182a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:hover { background: #d0213a; }
+button.secundario { background: #444; }
+
+.lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.tarjeta {
+    background: #23242c;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.tarjeta .icono { font-size: 2.5rem; }
+.tarjeta h3 { margin: 0; }
+.tarjeta .datos { color: #aaa; font-size: .9rem; }
+.tarjeta .precio { font-weight: 700; }
+.tarjeta button { margin-top: auto; }
+
+.pantalla {
+    margin: 1rem auto .8rem;
+    max-width: 360px;
+    text-align: center;
+    border-top: 4px solid #ccc;
+    color: #999;
+    font-size: .8rem;
+    letter-spacing: .3rem;
+}
+.sala {
+    display: grid;
+    grid-template-columns: repeat(8, 34px);
+    gap: 6px;
+    justify-content: center;
+}
+.butaca {
+    display: inline-block;
+    width: 34px;
+    height: 30px;
+    padding: 0;
+    border-radius: 6px 6px 3px 3px;
+    background: #4a4d5a;
+    color: #ccc;
+    font-size: .7rem;
+}
+.butaca:hover { background: #6a6d7a; }
+.butaca.seleccionada { background: #2e9e5b; color: #fff; }
+.butaca.ocupada { background: #7a1d27; cursor: not-allowed; }
+
+.leyenda { display: flex; gap: 1.2rem; justify-content: center; list-style: none; padding: 0; font-size: .85rem; }
+.leyenda .butaca { width: 18px; height: 16px; vertical-align: middle; }
+
+#resumen { text-align: center; font-size: 1.1rem; font-weight: 700; }
+
+#form-reserva { display: grid; gap: .7rem; max-width: 380px; margin: 0 auto; }
+#form-reserva label { display: grid; gap: .25rem; }
+
+.errores { background: #4a1b20; color: #ffb3bb; padding: .5rem 1.5rem; border-radius: 4px; margin: 0; }
+
+#entrada {
+    background: #f4efe2;
+    color: #222;
+    max-width: 380px;
+    margin: 1.5rem auto;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    border-left: 8px dashed #b0182a;
+}
+#entrada h2 { margin-top: 0; }

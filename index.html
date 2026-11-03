@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Mirador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Cine Mirador</h1>
+        <p>Cartelera y reserva de entradas</p>
+    </header>
+
+    <main>
+        <!-- CARTELERA -->
+        <section id="cartelera">
+            <h2>Cartelera</h2>
+
+            <div class="filtros">
+                <input type="search" id="buscador" placeholder="Buscar película...">
+                <select id="filtro-genero">
+                    <option value="todos">Todos los géneros</option>
+                    <option value="Animación">Animación</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Terror">Terror</option>
+                </select>
+            </div>
+
+            <p id="contador"></p>
+            <div id="lista-peliculas" class="lista"></div>
+        </section>
+
+        <!-- RESERVA (oculta hasta elegir película) -->
+        <section id="reserva" hidden>
+            <h2>Reserva: <span id="titulo-reserva"></span></h2>
+
+            <label>Sesión
+                <select id="sesion"></select>
+            </label>
+
+            <div class="pantalla">PANTALLA</div>
+            <div id="sala" class="sala"></div>
+
+            <ul class="leyenda">
+                <li><span class="butaca"></span> Libre</li>
+                <li><span class="butaca seleccionada"></span> Seleccionada</li>
+                <li><span class="butaca ocupada"></span> Ocupada</li>
+            </ul>
+
+            <p id="resumen">0 butacas · 0,00 €</p>
+
+            <form id="form-reserva" novalidate>
+                <label>Nombre <input type="text" id="nombre"></label>
+                <label>Email <input type="email" id="email"></label>
+                <ul id="errores" class="errores" hidden></ul>
+                <button type="submit">Confirmar reserva</button>
+                <button type="button" id="cancelar" class="secundario">Volver a la cartelera</button>
+            </form>
+        </section>
+
+        <!-- ENTRADA (se muestra al confirmar) -->
+        <section id="entrada" hidden></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
